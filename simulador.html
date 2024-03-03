@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Simulador de Costos de Productos</title>
+</head>
+<body>
+
+<h1>Simulador de Costos de Productos</h1>
+
+<form id="product-form">
+  <label for="product1">Producto 1 ($10):</label>
+  <input type="number" id="product1" value="0"><br><br>
+
+  <label for="product2">Producto 2 ($20):</label>
+  <input type="number" id="product2" value="0"><br><br>
+
+  <label for="product3">Producto 3 ($30):</label>
+  <input type="number" id="product3" value="0"><br><br>
+
+  <input type="button" value="Calcular Costo Total" onclick="calculateTotalCost()">
+</form>
+
+<p id="totalCost">Costo Total: $0</p>
+
+<!-- Referencia al archivo JavaScript en la carpeta 'js' -->
+<script src="js/miarchivo.js"></script>
+
+</body>
+</html>
