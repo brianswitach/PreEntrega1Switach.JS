@@ -1,34 +1,28 @@
-// Precios de los productos
-const prices = {
-    product1: 10,
-    product2: 20,
-    product3: 30
-  };
-  
-  // Supongamos que hay un descuento si el total supera $50
-  const discountM = 50;
-  const discountR = 0.1; // Descuento del 10%
-  
-  function calculateTotalCost() {
-    // Obtener las cantidades de cada producto del formulario
-    let cantidades = {
-      product1: parseInt(document.getElementById('product1').value) || 0,
-      product2: parseInt(document.getElementById('product2').value) || 0,
-      product3: parseInt(document.getElementById('product3').value) || 0,
-    };
-  
-    // Calcular el costo total usando un ciclo
-    let total = 0;
-    for (let product in cantidades) {
-      total += cantidades[product] * prices[product];
-    }
-  
-    // Aplicar descuento si el total supera el umbral establecido
-    if (total > discountM) {
-      total *= (1 - discountR);
-    }
-  
-    // Mostrar el costo total en la página
-    document.getElementById('totalCost').textContent = `Costo Total: $${total.toFixed(2)}`;
+// Precios de los productos en un array para cumplir con la especificación de usar arrays
+const prices = [10, 20, 30];
+
+// Descuento y umbral
+const discountThreshold = 50;
+const discountRate = 0.1; // Descuento del 10%
+
+function calculateTotalCost() {
+  // Usando prompt para capturar la cantidad de cada producto
+  let quantities = prices.map((price, index) => {
+    let quantity = parseInt(prompt(`Ingrese la cantidad para el Producto ${index + 1} ($${price}):`)) || 0;
+    return quantity;
+  });
+
+  // Calcular el costo total
+  let total = quantities.reduce((acc, quantity, index) => acc + (quantity * prices[index]), 0);
+
+  // Aplicar descuento si corresponde
+  if (total > discountThreshold) {
+    total -= total * discountRate;
   }
-  
+
+  // Usando alert para mostrar el costo total
+  alert(`Costo Total: $${total.toFixed(2)}`);
+}
+
+// Llamar a la función para ejecutar el simulador inmediatamente
+calculateTotalCost();
