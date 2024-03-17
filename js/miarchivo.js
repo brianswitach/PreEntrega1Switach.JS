@@ -1,23 +1,23 @@
 
-const prices = [10, 20, 30];
+const precios = [10, 20, 30];
 
 
-const discountThreshold = 50;
-const discountRate = 0.1; 
+const descuentouno = 50;
+const descuentodos = 0.1; 
 
 function calculateTotalCost() {
   
-  let quantities = prices.map((price, index) => {
-    let quantity = parseInt(prompt(`Ingrese la cantidad para el Producto ${index + 1} ($${price}):`)) || 0;
-    return quantity;
+  let cantidades = precios.map((price, index) => {
+    let cantidad = parseInt(prompt(`Ingrese la cantidad para el Producto ${index + 1} ($${price}):`)) || 0;
+    return cantidad;
   });
 
 
-  let total = quantities.reduce((acc, quantity, index) => acc + (quantity * prices[index]), 0);
+  let total = cantidades.reduce((acc, cantidad, index) => acc + (quantity * precios[index]), 0);
 
  
-  if (total > discountThreshold) {
-    total -= total * discountRate;
+  if (total > descuentouno) {
+    total -= total * descuentodos;
   }
 
   
