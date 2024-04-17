@@ -1,13 +1,18 @@
-const productos = [
-  { nombre: "Producto 1", precio: 10 },
-  { nombre: "Producto 2", precio: 20 },
-  { nombre: "Producto 3", precio: 30 }
-];
+async function cargarProductos() {
+  try {
+    const respuesta = await fetch('/js/productos.json');
+    if (!respuesta.ok) {
+      throw new Error(`HTTP error! status: ${respuesta.status}`);
+    }
+    const productos = await respuesta.json();
+    mostrarProductos(productos);
+  } catch (e) {
+    console.error('No se pudieron cargar los productos:', e);
+    alert('No se pudieron cargar los productos: ' + e); 
+  }
+}
 
-const descuentouno = 50;
-const descuentodos = 0.1;
-
-document.addEventListener('DOMContentLoaded', () => {
+function mostrarProductos(productos) {
   const form = document.getElementById('productForm');
   productos.forEach(producto => {
     const label = document.createElement('label');
@@ -21,16 +26,19 @@ document.addEventListener('DOMContentLoaded', () => {
     form.appendChild(label);
   });
 
-  document.getElementById('calculateBtn').addEventListener('click', calculateTotalCost);
-});
+  document.getElementById('calculateBtn').addEventListener('click', (event) => calculateTotalCost(productos, event));
+}
 
-function calculateTotalCost(event) {
+function calculateTotalCost(productos, event) {
   event.preventDefault();
 
   let total = productos.reduce((acc, producto) => {
     const cantidad = parseInt(document.getElementById(producto.nombre.replace(/\s+/g, '')).value) || 0;
     return acc + (cantidad * producto.precio);
   }, 0);
+
+  const descuentouno = 50;
+  const descuentodos = 0.1;
 
   if (total > descuentouno) {
     total -= total * descuentodos;
@@ -39,3 +47,5 @@ function calculateTotalCost(event) {
   localStorage.setItem('totalCost', total);
   document.getElementById('totalCostDisplay').textContent = `Costo Total: $${total.toFixed(2)}`;
 }
+
+document.addEventListener('DOMContentLoaded', cargarProductos);
