@@ -1,6 +1,12 @@
 [
-    { "nombre": "Producto 1", "precio": 10 },
-    { "nombre": "Producto 2", "precio": 20 },
-    { "nombre": "Producto 3", "precio": 30 }
-  ]
-  
+  { "nombre": "Laptop Pro", "precio": 1200, "descripcion": "Laptop de alto rendimiento con pantalla 4K", "categoria": "Electrónica" },
+  { "nombre": "Auriculares Bluetooth", "precio": 200, "descripcion": "Auriculares inalámbricos con cancelación de ruido", "categoria": "Electrónica" },
+  { "nombre": "Cafetera Inteligente", "precio": 150, "descripcion": "Cafetera programable con conexión Wi-Fi", "categoria": "Hogar" },
+  { "nombre": "Smartphone Max", "precio": 1000, "descripcion": "Teléfono inteligente con cámara de 108MP", "categoria": "Electrónica" },
+  { "nombre": "Tablet Plus", "precio": 800, "descripcion": "Tablet con pantalla de alta resolución", "categoria": "Electrónica" },
+  { "nombre": "Televisor UHD", "precio": 1400, "descripcion": "Televisor 65 pulgadas con resolución UHD", "categoria": "Electrónica" },
+  { "nombre": "Parlante Portátil", "precio": 120, "descripcion": "Parlante portátil con conectividad Bluetooth", "categoria": "Electrónica" },
+  { "nombre": "Reloj Inteligente", "precio": 250, "descripcion": "Reloj con GPS y monitoreo de actividad física", "categoria": "Electrónica" },
+  { "nombre": "Aspiradora Robot", "precio": 500, "descripcion": "Aspiradora automática con programación diaria", "categoria": "Hogar" },
+  { "nombre": "Consola de Videojuegos", "precio": 499, "descripcion": "Consola de videojuegos de última generación", "categoria": "Electrónica"}
+]

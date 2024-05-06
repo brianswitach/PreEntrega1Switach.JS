@@ -1,19 +1,32 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<title>Simulador de Costos de Productos</title>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <meta charset="UTF-8">
+  <title>Simulador de Costos de Productos</title>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<h1>Simulador de Costos de Productos</h1>
-<form id="productForm">
-</form>
-<button id="calculateBtn">Calcular Costo Total</button>
-<div id="totalCostDisplay"></div>
+  <div class="container mt-5">
+    <h1 class="text-center">Simulador de Costos de Productos</h1>
+    <div id="descuentoInfo" class="alert alert-warning text-center mt-3"></div>
 
-<script src="js/miarchivo.js"></script>
+   
+    <div class="form-group mt-3">
+      <input type="text" id="searchBar" class="form-control" placeholder="Buscar productos...">
+    </div>
+
+    <form id="productForm" class="form-group mt-4"></form>
+    <button id="calculateBtn" class="btn btn-primary btn-lg btn-block">Calcular Costo Total</button>
+    <div id="totalCostDisplay" class="alert alert-info mt-3"></div>
+  </div>
+
+  <script src="js/miarchivo.js" type="module"></script>
 
 </body>
 </html>

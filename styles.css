@@ -1,0 +1,67 @@
+body {
+    background: linear-gradient(to bottom, #FBFAFA, #EBC5C2, #B58077);
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1 {
+    color: #007bff;
+    margin-bottom: 30px;
+    font-weight: 700;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 15px;
+    font-weight: 700;
+  }
+  
+  input[type='number'] {
+    margin-left: 15px;
+    width: 80px;
+    padding: 5px;
+  }
+  
+  small {
+    display: block;
+    margin-left: 20px;
+    color: #7f8c8d;
+  }
+  
+  button {
+    margin-top: 20px;
+    font-size: 1.2em;
+  }
+  
+  #totalCostDisplay, #descuentoInfo {
+    text-align: center;
+    font-weight: bold;
+    margin-top: 20px;
+  }
+  
+  .alert {
+    font-size: 1.1em;
+  }
+  
+  .precio-verde {
+    color: #28a745; 
+  }
+  
+  .precio-final {
+    color: #007bff; 
+    font-weight: bold;
+  }
+  
+  .ahorro-color {
+    color: #e83e8c;
+    font-weight: bold;
+  }
+  
